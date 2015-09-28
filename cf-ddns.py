@@ -33,7 +33,7 @@ public_IPv6 = None
 ip_version = None
 
 try:
-  public_IPv4 = urllib2.urlopen(urllib2.Request('http://ipv4.icanhazip.com/')).read().rstrip()
+  public_IPv4 = urllib2.urlopen(urllib2.Request('http://169.254.169.254/latest/meta-data/public-ipv4')).read().rstrip()
 except urllib2.URLError as e:
   print('* no public IPv4 address detected')
 
